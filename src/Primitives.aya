@@ -1,0 +1,11 @@
+prim I prim coe
+prim intervalInv
+prim intervalMax
+prim intervalMin
+inline def ~ => intervalInv 
+variable A B : Type 
+def Path (A : I -> Type) (a : A 0) (b : A 1) 
+  => [| i |] A i { i := b | ~ i := a } 
+def infix = {A : Type} => Path (fn x => A) 
+def idp {a : A} : a = a => fn i => a 
+def pmap (f : A -> B) {a b : A} (p : a = b) : f a = f b => \i => f (p i)

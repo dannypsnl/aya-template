@@ -1,0 +1,11 @@
+open data Bool
+  | true
+  | false
+
+def not (x : Bool) : Bool
+  | true => false
+  | false => true
+
+def ifElse {A : Type 0} (x : Bool) (a b : A) : A
+  | true, a, _ => a
+  | false, _, b => b

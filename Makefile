@@ -2,6 +2,7 @@ aya := java -jar $(shell pwd)/cli-fatjar.jar
 
 build: cli-fatjar.jar lsp-fatjar.jar
 	$(aya) --make .
+.PHONY: build
 
 repl: cli-fatjar.jar lsp-fatjar.jar
 	$(aya) -i
