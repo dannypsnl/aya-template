@@ -1,0 +1,8 @@
+public open import Primitives
+
+def isProp (A : Type) => ∀ (x y : A) -> x = y
+def isSet (A : Type) : Type => ∀ (a b : A) -> isProp (a = b)
+def isContr (A : Type) => Sig (a : A) ** (∀ b -> a = b)
+
+def eq-is-contr {A : Type} : isContr A -> Fn (x y : A) -> x = y
+  | (c , C), x, y => \i => concat (sym (C x)) (C y) i
