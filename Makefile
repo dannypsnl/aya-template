@@ -6,8 +6,13 @@ build: cli-fatjar.jar lsp-fatjar.jar
 
 repl: cli-fatjar.jar lsp-fatjar.jar
 	$(aya) -i
+.PHONY: repl
 
 cli-fatjar.jar:
 	wget https://github.com/aya-prover/aya-dev/releases/download/nightly-build/cli-fatjar.jar
 lsp-fatjar.jar:
 	wget https://github.com/aya-prover/aya-dev/releases/download/nightly-build/lsp-fatjar.jar
+
+clean:
+	@rm *.jar
+.PHONY: clean
