@@ -1,11 +1,11 @@
 public open import Data::Bool
 public open import Data::Nat
 
-open data TermTy | natT | boolT
+open inductive TermTy | natT | boolT
 def termTy (t : TermTy) : Type 0
  | natT => Nat
  | boolT => Bool
-open data Term (n : TermTy) : Type 0
+open inductive Term (n : TermTy) : Type 0
  | natT => nat Nat
  | natT => succ (Term natT)
  | boolT => bool Bool

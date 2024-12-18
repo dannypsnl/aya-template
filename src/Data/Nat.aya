@@ -1,3 +1,3 @@
-open data Nat
+open inductive Nat
   | zero
   | suc Nat

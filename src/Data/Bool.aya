@@ -1,4 +1,4 @@
-open data Bool
+open inductive Bool
   | true
   | false
 
