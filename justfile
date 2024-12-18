@@ -1,13 +1,12 @@
 default:
   just --choose
 
-build:
+build: cli-fatjar lsp-fatjar
   java -jar cli-fatjar.jar --make .
 
-repl:
+repl: cli-fatjar lsp-fatjar
   java -jar cli-fatjar.jar -i
 
-prepare: cli-fatjar lsp-fatjar
 [private]
 cli-fatjar:
   #!/usr/bin/env python
